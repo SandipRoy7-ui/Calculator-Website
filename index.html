@@ -1,0 +1,63 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>All-in-One Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>All In One Calculator</h2>
+
+    <label for="calcType">Select Calculator</label>
+    <select id="calcType">
+      <option value="bmi">BMI</option>
+      <option value="age">Age</option>
+      <option value="love">Love %</option>
+      <option value="birthday">Next Birthday</option>
+      <option value="emi">EMI</option>
+      <option value="unit">Unit Conversion</option>
+      <option value="weight">Weight Conversion</option>
+      <option value="temp">Temperature Conversion</option>
+      <option value="gst">GST Calculator</option>
+      <option value="normal">Basic Calculator</option>
+    </select>
+
+    <!-- Dynamic area: JS will show/hide fields based on selected calculator -->
+    <div id="fields">
+      <!-- Example common fields: you (the JS) can replace/add input elements here -->
+      <div class="field" data-for="bmi age weight temp gst unit normal emi love birthday">
+        <label for="input1">Input 1</label>
+        <input id="input1" type="text" placeholder="Value 1" />
+      </div>
+
+      <div class="field" data-for="bmi weight unit">
+        <label for="input2">Input 2</label>
+        <input id="input2" type="text" placeholder="Value 2" />
+      </div>
+
+      <!-- Example extra field for EMI -->
+      <div class="field" data-for="emi">
+        <label for="emiMonths">Months</label>
+        <input id="emiMonths" type="number" placeholder="eg. 60" />
+      </div>
+
+      <!-- Example date field for birthday -->
+      <div class="field" data-for="birthday">
+        <label for="birthDate">Birth Date</label>
+        <input id="birthDate" type="date" />
+      </div>
+
+      <!-- Add/modify inputs as per your JS needs -->
+    </div>
+
+    <button id="calculateBtn">Calculate</button>
+
+    <div id="result" aria-live="polite"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
